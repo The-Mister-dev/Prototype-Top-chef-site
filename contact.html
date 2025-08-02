@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Restaurant Top Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <h1>Top Chef</h1>
+              <span>Restaurant Libanais</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="order.html" class="nav-link">Commande</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/2250000000000" class="whatsapp-btn">
+              Commander sur WhatsApp
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Nous Contacter</h1>
+        <p>Toutes les informations pour nous joindre</p>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>Adresse</h3>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📱</div>
+            <h3>WhatsApp</h3>
+            <p>+225 00 00 00 00 00</p>
+            <a href="https://wa.me/2250000000000" class="contact-btn"
+              >Nous écrire</a
+            >
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Téléphone</h3>
+            <p>+225 00 00 00 00 00</p>
+            <a href="tel:+2250000000000" class="contact-btn">Appeler</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p>contact@topchef-ci.com</p>
+            <a href="mailto:contact@topchef-ci.com" class="contact-btn"
+              >Écrire</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours -->
+    <section class="hours-section">
+      <div class="container">
+        <h2 class="section-title">Horaires d'Ouverture</h2>
+        <div class="hours-grid">
+          <div class="hours-card">
+            <h3>Restaurant</h3>
+            <div class="hours-list">
+              <div class="hour-item">
+                <span class="day">Lundi</span>
+                <span class="time">11h00 - 23h00</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Mardi</span>
+                <span class="time">11h00 - 23h00</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Mercredi</span>
+                <span class="time">11h00 - 23h00</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Jeudi</span>
+                <span class="time">11h00 - 23h00</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Vendredi</span>
+                <span class="time">11h00 - 23h30</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Samedi</span>
+                <span class="time">11h00 - 23h30</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Dimanche</span>
+                <span class="time">11h00 - 23h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <h3>Livraison</h3>
+            <div class="hours-list">
+              <div class="hour-item">
+                <span class="day">Lundi - Jeudi</span>
+                <span class="time">12h00 - 22h30</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Vendredi - Samedi</span>
+                <span class="time">12h00 - 23h00</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Dimanche</span>
+                <span class="time">12h00 - 22h30</span>
+              </div>
+            </div>
+            <p class="delivery-info">
+              <strong>Zone de livraison :</strong><br />
+              Yopougon (gratuit)<br />
+              Autres communes (+1000 F CFA)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <h2 class="section-title">Notre Localisation</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3!2d-4.0282!3d5.3364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjAnMDcuMCJOIDTCsDAxJzQxLjUiVw!5e0!3m2!1sfr!2sci!4v1620000000000!5m2!1sfr!2sci"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+        <div class="map-actions">
+          <a
+            href="https://maps.google.com/?q=Yopougon+Pharmacie+KENEYA+Abidjan"
+            target="_blank"
+            class="map-btn"
+          >
+            📍 Ouvrir dans Google Maps
+          </a>
+          <a
+            href="https://wa.me/2250000000000?text=Bonjour%2C%20j%27aimerais%20des%20indications%20pour%20me%20rendre%20au%20restaurant"
+            class="map-btn whatsapp"
+          >
+            📱 Demander l'itinéraire
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <div class="container">
+        <h2 class="section-title">Actions Rapides</h2>
+        <div class="actions-grid">
+          <a
+            href="https://wa.me/2250000000000?text=Bonjour%2C%20je%20souhaite%20passer%20une%20commande"
+            class="action-card whatsapp"
+          >
+            <div class="action-icon">🛒</div>
+            <h3>Commander</h3>
+            <p>Passez votre commande sur WhatsApp</p>
+          </a>
+
+          <a
+            href="https://wa.me/2250000000000?text=Bonjour%2C%20j%27aimerais%20réserver%20une%20table"
+            class="action-card"
+          >
+            <div class="action-icon">🪑</div>
+            <h3>Réserver</h3>
+            <p>Réservez votre table</p>
+          </a>
+
+          <a href="tel:+2250000000000" class="action-card">
+            <div class="action-icon">📞</div>
+            <h3>Appeler</h3>
+            <p>Contactez-nous par téléphone</p>
+          </a>
+
+          <a
+            href="https://wa.me/2250000000000?text=Bonjour%2C%20j%27ai%20une%20question"
+            class="action-card"
+          >
+            <div class="action-icon">❓</div>
+            <h3>Question</h3>
+            <p>Posez-nous vos questions</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-section">
+      <div class="container">
+        <h2 class="section-title">Restons Connectés</h2>
+        <div class="social-content">
+          <p>
+            Suivez-nous sur les réseaux sociaux pour ne rien manquer de nos
+            actualités, promotions et nouveautés !
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link facebook">
+              <span class="social-icon">📘</span>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link instagram">
+              <span class="social-icon">📷</span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://wa.me/2250000000000" class="social-link whatsapp">
+              <span class="social-icon">📱</span>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Restaurant Top Chef</h3>
+            <p>Cuisine libanaise authentique au cœur d'Abidjan</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Horaires</h4>
+            <p>Lundi - Dimanche<br />11h00 - 23h00</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Adresse</h4>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="https://wa.me/2250000000000" class="footer-whatsapp"
+              >WhatsApp: +225 00 00 00 00 00</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Restaurant Top Chef. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Mon Panier</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Votre panier est vide</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: <span id="cartTotal">0 F CFA</span></strong>
+        </div>
+        <button class="checkout-btn" onclick="orderOnWhatsApp()">
+          Commander sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

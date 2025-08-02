@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commande - Restaurant Top Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <h1>Top Chef</h1>
+              <span>Restaurant Libanais</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="order.html" class="nav-link active">Commande</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/2250000000000" class="whatsapp-btn">
+              Commander sur WhatsApp
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Order Hero -->
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Passer Commande</h1>
+        <p>Commandez facilement vos plats préférés</p>
+      </div>
+    </section>
+
+    <!-- Order Methods -->
+    <section class="order-methods">
+      <div class="container">
+        <h2 class="section-title">Comment Commander ?</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <div class="method-icon">🛒</div>
+            <h3>Méthode 1: Panier</h3>
+            <p>
+              Ajoutez vos plats au panier depuis le menu et commandez sur
+              WhatsApp
+            </p>
+            <a href="menu.html" class="method-btn">Voir le Menu</a>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">📝</div>
+            <h3>Méthode 2: Formulaire</h3>
+            <p>
+              Remplissez le formulaire ci-dessous pour une commande
+              personnalisée
+            </p>
+            <a href="#order-form" class="method-btn">Formulaire</a>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">📱</div>
+            <h3>Méthode 3: WhatsApp Direct</h3>
+            <p>Contactez-nous directement sur WhatsApp pour commander</p>
+            <a href="https://wa.me/2250595857542" class="method-btn whatsapp"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order-form" class="order-form-section">
+      <div class="container">
+        <h2 class="section-title">Formulaire de Commande</h2>
+        <div class="form-container">
+          <form id="orderForm" class="order-form">
+            <div class="form-group">
+              <label for="customerName">Nom complet *</label>
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="customerPhone">Numéro WhatsApp *</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                name="customerPhone"
+                placeholder="+225 XX XX XX XX XX"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="orderType">Type de commande *</label>
+              <select id="orderType" name="orderType" required>
+                <option value="">Choisir...</option>
+                <option value="livraison">Livraison</option>
+                <option value="emporter">À emporter</option>
+                <option value="sur-place">Sur place</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="addressGroup" style="display: none">
+              <label for="deliveryAddress">Adresse de livraison</label>
+              <textarea
+                id="deliveryAddress"
+                name="deliveryAddress"
+                rows="3"
+                placeholder="Entrez votre adresse complète..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Sélection des plats *</label>
+              <div class="dishes-selection">
+                <div class="dish-category">
+                  <h4>Plats Principaux</h4>
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="poulet-frites"
+                      name="dishes"
+                      value="Demi Poulet Frites Boisson - 5000"
+                    />
+                    <label for="poulet-frites"
+                      >Demi Poulet Frites Boisson (5 000 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="poulet-frites"
+                    />
+                  </div>
+
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="chawarma-viande"
+                      name="dishes"
+                      value="Chawarma Viande - 3500"
+                    />
+                    <label for="chawarma-viande"
+                      >Chawarma Viande (3 500 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="chawarma-viande"
+                    />
+                  </div>
+
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="chawarma-poulet"
+                      name="dishes"
+                      value="Chawarma Poulet - 3200"
+                    />
+                    <label for="chawarma-poulet"
+                      >Chawarma Poulet (3 200 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="chawarma-poulet"
+                    />
+                  </div>
+
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="pizza-royal"
+                      name="dishes"
+                      value="Pizza Royal - 4200"
+                    />
+                    <label for="pizza-royal">Pizza Royal (4 200 F CFA)</label>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="pizza-royal"
+                    />
+                  </div>
+                </div>
+
+                <div class="dish-category">
+                  <h4>Brochettes</h4>
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="brochette-agneau"
+                      name="dishes"
+                      value="Brochette d'Agneau - 4500"
+                    />
+                    <label for="brochette-agneau"
+                      >Brochette d'Agneau (4 500 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="brochette-agneau"
+                    />
+                  </div>
+
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="brochette-poulet"
+                      name="dishes"
+                      value="Brochette de Poulet - 3800"
+                    />
+                    <label for="brochette-poulet"
+                      >Brochette de Poulet (3 800 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="brochette-poulet"
+                    />
+                  </div>
+                </div>
+
+                <div class="dish-category">
+                  <h4>Boissons</h4>
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="jus-orange"
+                      name="dishes"
+                      value="Jus d'Orange Frais - 1500"
+                    />
+                    <label for="jus-orange"
+                      >Jus d'Orange Frais (1 500 F CFA)</label
+                    >
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="jus-orange"
+                    />
+                  </div>
+
+                  <div class="dish-item">
+                    <input
+                      type="checkbox"
+                      id="the-menthe"
+                      name="dishes"
+                      value="Thé à la Menthe - 800"
+                    />
+                    <label for="the-menthe">Thé à la Menthe (800 F CFA)</label>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      min="0"
+                      max="10"
+                      value="0"
+                      data-dish="the-menthe"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="orderTotal">Total estimé</label>
+              <input
+                type="text"
+                id="orderTotal"
+                name="orderTotal"
+                readonly
+                value="0 F CFA"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="specialRequest"
+                >Demande spéciale ou commentaire</label
+              >
+              <textarea
+                id="specialRequest"
+                name="specialRequest"
+                rows="4"
+                placeholder="Précisez vos préférences, allergies, ou demandes particulières..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span class="btn-icon">📱</span>
+              Commander sur WhatsApp
+            </button>
+          </form>
+
+          <div class="order-info">
+            <div class="info-card">
+              <h3>📞 Réponse Rapide</h3>
+              <p>
+                Nos équipes vous répondent rapidement sur WhatsApp pour
+                confirmer votre commande.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>🚚 Livraison</h3>
+              <p>
+                Livraison gratuite dans Yopougon. Frais de livraison: 1000 F CFA
+                pour les autres communes.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>💳 Paiement</h3>
+              <p>
+                Paiement à la livraison ou à la réception (espèces ou mobile
+                money).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-section">
+      <div class="container">
+        <h2 class="section-title">Commande Rapide</h2>
+        <div class="qr-content">
+          <div class="qr-code">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/2250595857542?text=Bonjour%2C%20je%20souhaite%20passer%20une%20commande%20au%20Restaurant%20Top%20Chef"
+              alt="QR Code WhatsApp"
+            />
+          </div>
+          <div class="qr-info">
+            <h3>Scannez pour Commander</h3>
+            <p>
+              Scannez ce QR code avec votre téléphone pour accéder directement à
+              notre WhatsApp et passer commande rapidement.
+            </p>
+            <p><strong>Ou cliquez directement :</strong></p>
+            <a
+              href="https://wa.me/2250595857542?text=Bonjour%2C%20je%20souhaite%20passer%20une%20commande%20au%20Restaurant%20Top%20Chef"
+              class="whatsapp-btn"
+            >
+              Ouvrir WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Restaurant Top Chef</h3>
+            <p>Cuisine libanaise authentique au cœur d'Abidjan</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Horaires</h4>
+            <p>Lundi - Dimanche<br />11h00 - 23h00</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Adresse</h4>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="https://wa.me/2250595857542" class="footer-whatsapp"
+              >WhatsApp: +225 00 00 00 00 00</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Restaurant Top Chef. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Mon Panier</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Votre panier est vide</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: <span id="cartTotal">0 F CFA</span></strong>
+        </div>
+        <button class="checkout-btn" onclick="orderOnWhatsApp()">
+          Commander sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

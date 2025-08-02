@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Restaurant Top Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <h1>Top Chef</h1>
+              <span>Restaurant Libanais</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="menu.html" class="nav-link active">Menu</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="order.html" class="nav-link">Commande</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/2250595857542" class="whatsapp-btn">
+              Commander sur WhatsApp
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Notre Menu</h1>
+        <p>Découvrez nos délicieuses spécialités libanaises</p>
+      </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-nav">
+      <div class="container">
+        <div class="menu-nav-items">
+          <a href="#patisseries" class="menu-nav-link">Pâtisseries & Entrées</a>
+          <a href="#sandwiches" class="menu-nav-link">Sandwiches</a>
+          <a href="#brochettes" class="menu-nav-link">Brochettes</a>
+          <a href="#plats" class="menu-nav-link">Plats & Assiettes</a>
+          <a href="#desserts" class="menu-nav-link">Desserts</a>
+          <a href="#boissons" class="menu-nav-link">Boissons</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Offers -->
+    <section class="best-offers">
+      <div class="container">
+        <h2 class="section-title">Meilleures Offres</h2>
+        <div class="offer-card">
+          <div class="offer-content">
+            <h3>Demi Poulet Frites Boisson</h3>
+            <p>Offre spéciale - Économisez 1000 F CFA</p>
+            <div class="offer-price">
+              <span class="old-price">6 000 F CFA</span>
+              <span class="new-price">5 000 F CFA</span>
+            </div>
+            <button
+              class="add-to-cart-btn"
+              onclick="addToCart('Demi Poulet Frites Boisson (Offre)', 5000, '')"
+            >
+              Ajouter au panier
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Sections -->
+    <section class="menu-content">
+      <div class="container">
+        <!-- Pâtisseries & Entrées -->
+        <div id="patisseries" class="menu-category">
+          <h2 class="category-title">Pâtisseries & Entrées</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/1630309/pexels-photo-1630309.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Houmous"
+              />
+              <div class="item-info">
+                <h3>Houmous</h3>
+                <p>Purée de pois chiches à l'huile d'olive et au tahini</p>
+                <div class="item-price">2 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Houmous', 2500, 'https://images.pexels.com/photos/1630309/pexels-photo-1630309.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Baba Ganoush"
+              />
+              <div class="item-info">
+                <h3>Baba Ganoush</h3>
+                <p>Caviar d'aubergines grillées à l'ail et au citron</p>
+                <div class="item-price">2 800 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Baba Ganoush', 2800, 'https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/7627416/pexels-photo-7627416.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Fatayer"
+              />
+              <div class="item-info">
+                <h3>Fatayer aux Épinards</h3>
+                <p>Chaussons libanais aux épinards et oignons</p>
+                <div class="item-price">1 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Fatayer aux Épinards', 1500, 'https://images.pexels.com/photos/7627416/pexels-photo-7627416.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sandwiches -->
+        <div id="sandwiches" class="menu-category">
+          <h2 class="category-title">Sandwiches</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Chawarma Viande"
+              />
+              <div class="item-info">
+                <h3>Chawarma Viande</h3>
+                <p>Pain pita, viande grillée, légumes, sauce tahini</p>
+                <div class="item-price">3 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Chawarma Viande', 3500, 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/7627555/pexels-photo-7627555.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Chawarma Poulet"
+              />
+              <div class="item-info">
+                <h3>Chawarma Poulet</h3>
+                <p>Pain pita, poulet grillé, crudités, sauce ail</p>
+                <div class="item-price">3 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Chawarma Poulet', 3200, 'https://images.pexels.com/photos/7627555/pexels-photo-7627555.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Falafel"
+              />
+              <div class="item-info">
+                <h3>Sandwich Falafel</h3>
+                <p>Boulettes de pois chiches, légumes, sauce tahini</p>
+                <div class="item-price">2 800 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Sandwich Falafel', 2800, 'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brochettes -->
+        <div id="brochettes" class="menu-category">
+          <h2 class="category-title">Brochettes</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Brochette Agneau"
+              />
+              <div class="item-info">
+                <h3>Brochette d'Agneau</h3>
+                <p>Cubes d'agneau marinés aux épices libanaises</p>
+                <div class="item-price">4 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Brochette d\'Agneau', 4500, 'https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Brochette Poulet"
+              />
+              <div class="item-info">
+                <h3>Brochette de Poulet</h3>
+                <p>Blanc de poulet mariné au citron et aux herbes</p>
+                <div class="item-price">3 800 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Brochette de Poulet', 3800, 'https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Kafta"
+              />
+              <div class="item-info">
+                <h3>Kafta</h3>
+                <p>Viande hachée aux épices, persil et oignons</p>
+                <div class="item-price">4 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Kafta', 4200, 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plats & Assiettes -->
+        <div id="plats" class="menu-category">
+          <h2 class="category-title">Plats & Assiettes</h2>
+          <div class="menu-items">
+            <div class="menu-item featured">
+              <img
+                src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Demi Poulet"
+              />
+              <div class="item-info">
+                <h3>Demi Poulet Frites Boisson</h3>
+                <p>Demi poulet grillé, frites maison, boisson au choix</p>
+                <div class="item-price">5 000 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Demi Poulet Frites Boisson', 5000, 'https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Pizza Royal"
+              />
+              <div class="item-info">
+                <h3>Pizza Royal</h3>
+                <p>Pâte artisanale, tomates, fromage, garniture royale</p>
+                <div class="item-price">4 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Pizza Royal', 4200, 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Assiette Mixte"
+              />
+              <div class="item-info">
+                <h3>Assiette Mixte</h3>
+                <p>Sélection de mezze, houmous, taboulé, falafel</p>
+                <div class="item-price">6 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Assiette Mixte', 6500, 'https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div id="desserts" class="menu-category">
+          <h2 class="category-title">Desserts</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Baklawa"
+              />
+              <div class="item-info">
+                <h3>Baklawa</h3>
+                <p>Pâtisserie feuilletée aux noix et miel</p>
+                <div class="item-price">1 800 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Baklawa', 1800, 'https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Maamouls"
+              />
+              <div class="item-info">
+                <h3>Maamouls</h3>
+                <p>Sablés fourrés aux dattes ou aux noix</p>
+                <div class="item-price">1 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Maamouls', 1200, 'https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Mouhallabieh"
+              />
+              <div class="item-info">
+                <h3>Mouhallabieh</h3>
+                <p>Crème dessert à la fleur d'oranger et pistaches</p>
+                <div class="item-price">2 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Mouhallabieh', 2200, 'https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boissons -->
+        <div id="boissons" class="menu-category">
+          <h2 class="category-title">Boissons</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Jus d'Orange"
+              />
+              <div class="item-info">
+                <h3>Jus d'Orange Frais</h3>
+                <p>Jus d'orange pressé à la minute</p>
+                <div class="item-price">1 500 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Jus d\'Orange Frais', 1500, 'https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/1233319/pexels-photo-1233319.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Thé à la Menthe"
+              />
+              <div class="item-info">
+                <h3>Thé à la Menthe</h3>
+                <p>Thé vert traditionnel à la menthe fraîche</p>
+                <div class="item-price">800 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Thé à la Menthe', 800, 'https://images.pexels.com/photos/1233319/pexels-photo-1233319.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src="https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Limonade"
+              />
+              <div class="item-info">
+                <h3>Limonade Maison</h3>
+                <p>Limonade fraîche aux herbes et citron vert</p>
+                <div class="item-price">1 200 F CFA</div>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Limonade Maison', 1200, 'https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?auto=compress&cs=tinysrgb&w=300')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Restaurant Top Chef</h3>
+            <p>Cuisine libanaise authentique au cœur d'Abidjan</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Horaires</h4>
+            <p>Lundi - Dimanche<br />11h00 - 23h00</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Adresse</h4>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="https://wa.me/2250000000000" class="footer-whatsapp"
+              >WhatsApp: +225 00 00 00 00 00</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Restaurant Top Chef. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Mon Panier</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Votre panier est vide</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: <span id="cartTotal">0 F CFA</span></strong>
+        </div>
+        <button class="checkout-btn" onclick="orderOnWhatsApp()">
+          Commander sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

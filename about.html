@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos - Restaurant Top Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <h1>Top Chef</h1>
+              <span>Restaurant Libanais</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link active">À propos</a></li>
+            <li><a href="order.html" class="nav-link">Commande</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/2250000000000" class="whatsapp-btn">
+              Commander sur WhatsApp
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- About Hero -->
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>À Propos de Nous</h1>
+        <p>Découvrez l'histoire et les valeurs du Restaurant Top Chef</p>
+      </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+      <div class="container">
+        <!-- Histoire -->
+        <div class="about-section">
+          <div class="about-text">
+            <h2>Notre Histoire</h2>
+            <p>
+              Top Chef est un restaurant libanais situé à Yopougon, fondé pour
+              offrir une expérience culinaire authentique et chaleureuse, avec
+              des recettes du Moyen-Orient revisitées pour les gourmets
+              d'Abidjan.
+            </p>
+
+            <p>
+              Depuis notre ouverture, nous nous attachons à préserver les
+              traditions culinaires libanaises tout en nous adaptant aux saveurs
+              locales. Notre équipe de chefs expérimentés met un point d'honneur
+              à utiliser des ingrédients frais et de qualité pour vous offrir
+              des plats savoureux et authentiques.
+            </p>
+
+            <p>
+              Notre restaurant est devenu une référence dans le quartier de
+              Yopougon, accueillant familles, amis et professionnels dans une
+              ambiance conviviale et chaleureuse qui rappelle l'hospitalité
+              libanaise.
+            </p>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Restaurant ambiance"
+            />
+          </div>
+        </div>
+
+        <!-- Valeurs -->
+        <div class="values-section">
+          <h2 class="section-title">Nos Valeurs</h2>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">⭐</div>
+              <h3>Qualité</h3>
+              <p>
+                Nous sélectionnons rigoureusement nos ingrédients pour vous
+                garantir des plats d'exception
+              </p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">🤝</div>
+              <h3>Accueil</h3>
+              <p>
+                Notre équipe vous accueille avec le sourire dans une ambiance
+                familiale et chaleureuse
+              </p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">🌟</div>
+              <h3>Saveurs Authentiques</h3>
+              <p>
+                Nos recettes traditionnelles libanaises vous transportent au
+                cœur du Moyen-Orient
+              </p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">🧼</div>
+              <h3>Hygiène</h3>
+              <p>
+                Nous respectons les plus hauts standards d'hygiène et de
+                sécurité alimentaire
+              </p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">♿</div>
+              <h3>Accessibilité</h3>
+              <p>
+                Notre restaurant est accessible à tous, dans un esprit
+                d'inclusion et de partage
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Équipe -->
+        <div class="team-section">
+          <h2 class="section-title">Notre Équipe</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <img
+                src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Chef"
+              />
+              <h3>Chef Ahmad</h3>
+              <p>Chef Principal</p>
+              <p>
+                20 ans d'expérience dans la cuisine libanaise traditionnelle
+              </p>
+            </div>
+
+            <div class="team-member">
+              <img
+                src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Manager"
+              />
+              <h3>Sarah</h3>
+              <p>Responsable de Salle</p>
+              <p>Experte en service client et organisation d'événements</p>
+            </div>
+
+            <div class="team-member">
+              <img
+                src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Sous-chef"
+              />
+              <h3>Karim</h3>
+              <p>Sous-Chef</p>
+              <p>Spécialiste des grillades et des brochettes libanaises</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <div class="container">
+        <h2 class="section-title">Où Nous Trouver</h2>
+        <div class="location-content">
+          <div class="location-info">
+            <h3>Adresse</h3>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+
+            <h3>Horaires d'Ouverture</h3>
+            <div class="hours">
+              <div class="hour-row">
+                <span>Lundi - Vendredi</span>
+                <span>11h00 - 23h00</span>
+              </div>
+              <div class="hour-row">
+                <span>Samedi - Dimanche</span>
+                <span>11h00 - 23h30</span>
+              </div>
+            </div>
+
+            <div class="location-actions">
+              <a href="https://wa.me/2250000000000" class="whatsapp-btn">
+                Nous contacter sur WhatsApp
+              </a>
+              <a href="contact.html" class="secondary-btn">
+                Plus d'informations
+              </a>
+            </div>
+          </div>
+
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3!2d-4.0!3d5.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMTgnMDAuMCJOIDTCsDAwJzAwLjAiVw!5e0!3m2!1sen!2sci!4v1620000000000!5m2!1sen!2sci"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Restaurant Top Chef</h3>
+            <p>Cuisine libanaise authentique au cœur d'Abidjan</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Horaires</h4>
+            <p>Lundi - Dimanche<br />11h00 - 23h00</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Adresse</h4>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="https://wa.me/2250000000000" class="footer-whatsapp"
+              >WhatsApp: +225 00 00 00 00 00</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Restaurant Top Chef. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Mon Panier</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Votre panier est vide</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: <span id="cartTotal">0 F CFA</span></strong>
+        </div>
+        <button class="checkout-btn" onclick="orderOnWhatsApp()">
+          Commander sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

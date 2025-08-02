@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Top Chef - Cuisine Libanaise à Abidjan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <h1>Top Chef</h1>
+              <span>Restaurant Libanais</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Accueil</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="order.html" class="nav-link">Commande</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/2250595857542" class="whatsapp-btn">
+              Commander sur WhatsApp
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Un goût du Liban au cœur d'Abidjan</h1>
+        <p class="hero-subtitle">
+          Découvrez l'authenticité de la cuisine libanaise dans une ambiance
+          chaleureuse
+        </p>
+        <a href="menu.html" class="cta-btn">Voir le menu</a>
+      </div>
+    </section>
+
+    <!-- Specialités Section -->
+    <section class="specialties">
+      <div class="container">
+        <h2 class="section-title">Nos Spécialités</h2>
+        <div class="specialties-grid">
+          <div class="specialty-card" data-aos="fade-up">
+            <img
+              src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="Demi Poulet Frites"
+            />
+            <div class="card-content">
+              <h3>Demi Poulet Frites Boisson</h3>
+              <p>
+                Demi poulet grillé accompagné de frites croustillantes et d'une
+                boisson fraîche
+              </p>
+              <div class="price">5 000 F CFA</div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Demi Poulet Frites Boisson', 5000, 'https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=400')"
+              >
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="Chawarma Viande"
+            />
+            <div class="card-content">
+              <h3>Chawarma Viande</h3>
+              <p>
+                Pain pita garni de viande grillée, légumes frais et sauce
+                spéciale libanaise
+              </p>
+              <div class="price">3 500 F CFA</div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Chawarma Viande', 3500, 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400')"
+              >
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="Pizza Royal"
+            />
+            <div class="card-content">
+              <h3>Pizza Royal</h3>
+              <p>
+                Pizza artisanale garnie de nos meilleurs ingrédients, pâte
+                fraîche maison
+              </p>
+              <div class="price">4 200 F CFA</div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Pizza Royal', 4200, 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400')"
+              >
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atouts Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Nos Atouts</h2>
+        <div class="features-grid">
+          <div class="feature-item" data-aos="fade-up">
+            <div class="feature-icon">🚚</div>
+            <h3>Livraison</h3>
+            <p>Livraison rapide dans tout Yopougon</p>
+          </div>
+
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon">🏡</div>
+            <h3>Terrasse</h3>
+            <p>Espace convivial en terrasse</p>
+          </div>
+
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">♿</div>
+            <h3>Accessibilité</h3>
+            <p>Restaurant accessible à tous</p>
+          </div>
+
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon">🍹</div>
+            <h3>Cocktails</h3>
+            <p>Cocktails et jus frais maison</p>
+          </div>
+
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-icon">🍰</div>
+            <h3>Desserts</h3>
+            <p>Pâtisseries libanaises authentiques</p>
+          </div>
+
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="feature-icon">🎵</div>
+            <h3>Ambiance</h3>
+            <p>Ambiance chaleureuse et musicale</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Restaurant Top Chef</h3>
+            <p>Cuisine libanaise authentique au cœur d'Abidjan</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Horaires</h4>
+            <p>Lundi - Dimanche<br />11h00 - 23h00</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Adresse</h4>
+            <p>Yopougon, Pharmacie KENEYA<br />Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="https://wa.me/2250000000000" class="footer-whatsapp"
+              >WhatsApp: +225 00 00 00 00 00</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Restaurant Top Chef. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Mon Panier</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Votre panier est vide</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: <span id="cartTotal">0 F CFA</span></strong>
+        </div>
+        <button class="checkout-btn" onclick="orderOnWhatsApp()">
+          Commander sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
